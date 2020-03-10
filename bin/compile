@@ -1,4 +1,7 @@
 #!/bin/sh
 
-echo "heroku config:set RELEASE=$SOURCE_VERSION"
-echo "env RELEASE=$SOURCE_VERSION"
+SOURCE_VERSION=$SOURCE_VERSION
+GIT=$SOURCE_VERSION
+
+echo "heroku config:set GIT=$SOURCE_VERSION"
+echo "env GIT=$SOURCE_VERSION"

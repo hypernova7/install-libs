@@ -1,5 +1,6 @@
 #!/bin/sh
 
-eval "env RELEASE=$SOURCE_VERSION"
+env RELEASE=$SOURCE_VERSION
+heroku config:set RELEASE=$SOURCE_VERSION
 
 echo "RELEASE=$SOURCE_VERSION" >> $1/.env

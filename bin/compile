@@ -6,5 +6,5 @@ VERSION=2:4:6
 echo "RELEASE=$SOURCE_VERSION" >> $SRC
 echo "SOURCE_VERSION=$SOURCE_VERSION" >> $SRC
 
-echo $VERSION | awk 'BEGIN { FS=":" } { $3++;  if ($3 > 9) { $3=0; $2++; if ($2 > 9) { $2=0; $1++ } } } { printf "%2d:%2d:%2d\n", $1, $2, $3 }'
+echo $VERSION | awk 'BEGIN { FS=":" } { $3++;  if ($3 > 9) { $3=0; $2++; if ($2 > 9) { $2=0; $1++ } } } { printf "%0d:%0d:%0d\n", $1, $2, $3 }'
 echo $VERSION

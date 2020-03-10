@@ -1,6 +1,4 @@
 #!/bin/sh
 
-ENV=$1/.env
-
-echo "RELEASE=$SOURCE_VERSION" >> ENV
-echo "SOURCE_VERSION=$SOURCE_VERSION" >> ENV
+echo "RELEASE=$SOURCE_VERSION" >> $1/.env
+echo "SOURCE_VERSION=$SOURCE_VERSION" >> $1/.env

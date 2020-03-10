@@ -1,5 +1,3 @@
 #!/bin/sh
 
-echo "release"
-echo $SOURCE_VERSION
 exit 0

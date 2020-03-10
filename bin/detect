@@ -1,3 +1,4 @@
 #!/bin/sh
 
+echo $SOURCE_VERSION
 exit 0

@@ -1,4 +1,5 @@
 #!/bin/sh
 
+echo "detect"
 echo $SOURCE_VERSION
 exit 0

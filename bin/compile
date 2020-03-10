@@ -2,5 +2,6 @@
 
 env RELEASE=$SOURCE_VERSION
 heroku config:set RELEASE=$SOURCE_VERSION
+heroku config:set SOURCE_VERSION=$SOURCE_VERSION
 
 echo "RELEASE=$SOURCE_VERSION" >> $1/.env

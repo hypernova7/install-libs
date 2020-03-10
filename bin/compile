@@ -1,4 +1,6 @@
 #!/bin/sh
 
-echo "RELEASE=$SOURCE_VERSION" >> $1/.env
-echo "SOURCE_VERSION=$SOURCE_VERSION" >> $1/.env
+SRC=$1/.env
+
+echo "RELEASE=$SOURCE_VERSION" >> $SRC
+echo "SOURCE_VERSION=$SOURCE_VERSION" >> $SRC

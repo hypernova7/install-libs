@@ -1,2 +1,5 @@
+#!/bin/sh
 
 RELEASE=$SOURCE_VERSION
+
+echo "Saved successfully"

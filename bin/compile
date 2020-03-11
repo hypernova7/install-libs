@@ -2,5 +2,3 @@
 
 echo "RELEASE=$SOURCE_VERSION" >> $1/.env
 echo "SOURCE_VERSION=$SOURCE_VERSION" >> $1/.env
-
-chmod +x ./compress-img.sh && ./compress-img.sh

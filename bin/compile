@@ -1,4 +1,7 @@
 #!/bin/bash
-
+if [ -z "$SOURCE_VERSION" ]; then
+  echo "Not found env SOURCE_VERSION
+  exit 0
+fi
 echo "RELEASE=$SOURCE_VERSION" >> $1/.env
 echo "SOURCE_VERSION=$SOURCE_VERSION" >> $1/.env

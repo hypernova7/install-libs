@@ -22,7 +22,7 @@ const write = (val) => {
 const rewrite = (val) => {
   const file = path.resolve(process.cwd(), '.env')
   return fs.appendFile(file, val, (e) => {
-    if (e) log(`Error: ${e.toString()}|)
+    if (e) log(`Error: ${e.toString()}`)
     log(fs.readFileSync(file))
   })
 }

@@ -20,8 +20,10 @@ const write = (val) => {
   })
 }
 const rewrite = (val) => {
-  return fs.appendFile(path.resolve(process.cwd(), '.env'), val, (e) => {
+  const file = path.resolve(process.cwd(), '.env')
+  return fs.appendFile(file, val, (e) => {
     if (e) log(e.toString())
+    log(fs.readFileSync(file))
   })
 }
 if (!v) {
@@ -29,5 +31,5 @@ if (!v) {
   process.exit(0)
 } else {
   rewrite(`\nRELEASE=${v}\nSOURCE_VERSION=${v}`)
-  log(JSON.stringify(env))
+
 }

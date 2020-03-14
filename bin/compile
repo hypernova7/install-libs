@@ -5,7 +5,7 @@ const v = env.SOURCE_VERSION
 const fs = require('fs')
 const path = require('path')
 const { exec } = require('child_process')
-const log = (...arg) => console.log.apply(null, ...arg)
+const log = (...args) => console.log(...args)
 const write = (val) => {
   return exec(val, (error, stdout, stderr) => {
     if (error) {

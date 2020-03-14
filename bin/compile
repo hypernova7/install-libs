@@ -2,7 +2,19 @@
 
 const { env } = process
 const { execSync } = require('child_process')
-const write = (val) => execSync(val)
+const write = (val) => {
+  return exec(val, (error, stdout, stderr) => {
+    if (error) {
+      console.log(`error: ${error.message}`);
+      return;
+    }
+    if (stderr) {
+      console.log(`stderr: ${stderr}`);
+      return;
+    }
+    console.log(`stdout: ${stdout}`);
+  })
+}
 write(`
   echo $SOURCE_VERSION
 `)

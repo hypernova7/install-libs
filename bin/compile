@@ -9,20 +9,20 @@ const log = () => console.log.apply(null, arguments)
 const write = (val) => {
   return exec(val, (error, stdout, stderr) => {
     if (error) {
-      console.log(`error: ${error.message}`);
+      log(`error: ${error.message}`);
       return;
     }
     if (stderr) {
-      console.log(`stderr: ${stderr}`);
+      log(`stderr: ${stderr}`);
       return;
     }
-    console.log(`stdout: ${stdout}`);
+    log(`stdout: ${stdout}`);
   })
 }
 const rewrite = (val) => {
   const file = path.resolve(process.cwd(), '.env')
   return fs.appendFile(file, val, (e) => {
-    if (e) log(e.toString())
+    if (e) log(`Error: ${e.toString()}|)
     log(fs.readFileSync(file))
   })
 }

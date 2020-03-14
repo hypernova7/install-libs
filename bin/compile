@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const { env } = process
-const { execSync } = require('child_process')
+const { exec } = require('child_process')
 const write = (val) => {
   return exec(val, (error, stdout, stderr) => {
     if (error) {

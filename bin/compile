@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const { env } = process
 const { exec } = require('child_process')
-exec('npm i -g find-up', (e, out, err) => {
+exec('npm init -y && npm i -g find-up', (e, out, err) => {
   if (e || err) return;
   const { sync } = require('find-up')
   console.log(sync('.env'))

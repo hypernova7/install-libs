@@ -1,22 +1,10 @@
-#!/usr/bin/env node
+#!/bin/sh
 
-const { exec } = require('child_process')
-const log = (...args) => console.log(...args)
-const write = (val) => {
-  return exec(val, (error, stdout, stderr) => {
-    if (error) {
-      log(`error: ${error.message}`);
-      return;
-    }
-    if (stderr) {
-      log(`stderr: ${stderr}`);
-      return;
-    }
-    log(`stdout: ${stdout}`);
-  })
-}
-write('npm i [-g] shelljs')
-const sh = require('shelljs')
-sh.exec(`
-  echo "$1"
-`)
+if [ -z "$SOURCE_VERSION" ]; then
+  echo "Not found SOURCE_VERSION"
+  exit 0
+fi
+
+echo "RELEASE=$SOURCE_VERSION" >> $1/.env
+echo "SOURCE_VERSION=$SOURCE_VERSION" >> $1/.env
+

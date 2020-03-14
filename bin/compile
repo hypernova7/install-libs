@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-const path = require('path')
-console.log(__dirname, process.cwd(), path.resolve('.'))
+const { env } = process
+console.log(env.CACHE_DIR)
 
 /*if [ -z "$SOURCE_VERSION" ]; then
   echo "Not found SOURCE_VERSION"

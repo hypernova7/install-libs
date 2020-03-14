@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-
-console.log(JSON.stringify(process.env))
+const path = require('path')
+console.log(__dirname, process.cwd(), path.resolve('.'))
 
 /*if [ -z "$SOURCE_VERSION" ]; then
   echo "Not found SOURCE_VERSION"

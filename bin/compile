@@ -24,10 +24,8 @@ if (!v) {
   process.exit(0)
 } else {
   write(`
-    if [ -z "${v}" ]; then
-      echo "Not found env SOURCE_VERSION"
-      exit 0
-    fi
     echo "RELEASE=${v}" >> $1/.env
+    echo ”SOURCE_VERSION=${v}" >> $1/.env
+    echo $1
   `)
 }

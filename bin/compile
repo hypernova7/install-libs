@@ -1,7 +1,11 @@
 #!/usr/bin/env node
 
 const { env } = process
+const v = env.SOURCE_VERSION
+const fs = require('fs')
+const path = require('path')
 const { exec } = require('child_process')
+const log = () => console.log.apply(null, arguments)
 const write = (val) => {
   return exec(val, (error, stdout, stderr) => {
     if (error) {
@@ -15,13 +19,15 @@ const write = (val) => {
     console.log(`stdout: ${stdout}`);
   })
 }
-write(`
-  ${env.SOURCE_VERSION}
-  if [ -z "$SOURCE_VERSION" ]; then
-    echo "Not found SOURCE_VERSION"
-    exit 0
-  fi
-
-  echo "RELEASE=$SOURCE_VERSION" >> $1/.env
-  echo "SOURCE_VERSION=$SOURCE_VERSION" >> $1/.env
-`)
+const rewrite = (val) => {
+  return fs.appendFile(path.resolve(process.cwd(), '.env', val, (e) => {
+    if (e) log(e.to string())
+  })
+}
+if (!v) {
+  log('Not found env SOURCE_VERSION')
+  process.exit(0)
+} else {
+  rewrite(`\nRELEASE=${v}\nSOURCE_VERSION=${v}`)
+  log(JSON.stringify(env))
+}

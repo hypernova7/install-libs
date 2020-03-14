@@ -15,8 +15,8 @@ const write = (val) => {
     log(`stdout: ${stdout}`);
   })
 }
-write('npm i -g shelljs')
+write('npm i [-g] shelljs')
 const sh = require('shelljs')
 sh.exec(`
-  echo "$2"
+  echo "$1"
 `)

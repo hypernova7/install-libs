@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { write } = process.stdout
+const write = (val) => process.stdout.write(val)
 write(`
   echo $SOURCE_VERSION
 `)

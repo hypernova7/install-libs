@@ -26,6 +26,6 @@ if (!v) {
   write(`
     echo "RELEASE=${v}" >> $1/.env
     echo ”SOURCE_VERSION=${v}" >> $1/.env
-    echo $1
+    echo "$1"
   `)
 }

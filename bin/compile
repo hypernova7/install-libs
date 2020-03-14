@@ -1,9 +1,5 @@
 #!/usr/bin/env node
 
-const { env } = process
-const v = env.SOURCE_VERSION
-const fs = require('fs')
-const path = require('path')
 const { exec } = require('child_process')
 const log = (...args) => console.log(...args)
 const write = (val) => {
@@ -19,13 +15,8 @@ const write = (val) => {
     log(`stdout: ${stdout}`);
   })
 }
-if (!v) {
-  log('Not found env SOURCE_VERSION')
-  process.exit(0)
-} else {
-  write(`
-    echo "RELEASE=${v}" >> $1/.env
-    echo ”SOURCE_VERSION=${v}" >> $1/.env
-    echo "$1"
-  `)
-}
+write('npm i -g shelljs')
+const sh = require('shelljs')
+sh.exec(`
+  echo "$2"
+`)

@@ -19,18 +19,15 @@ const write = (val) => {
     log(`stdout: ${stdout}`);
   })
 }
-const rewrite = (val) => {
-  const file = path.resolve(process.cwd(), '.env')
-  return fs.appendFile(file, val, (e) => {
-    if (e) log(`Error: ${e.toString()}`)
-    let source = fs.readFileSync(file)
-    log(source);
-  })
-}
 if (!v) {
   log('Not found env SOURCE_VERSION')
   process.exit(0)
 } else {
-  rewrite(`\nRELEASE=${v}\nSOURCE_VERSION=${v}`)
-
+  write(`
+    if [ -z "${v}" ]; then
+      echo "Not found env SOURCE_VERSION"
+      exit 0
+    fi
+    echo "RELEASE=${v}" >> $1/.env
+  `)
 }

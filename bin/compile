@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 const { env } = process
+const { execSync } = require('child_process')
+execSync('export CACHE_DIR=$1')
 console.log(env.CACHE_DIR)
 
 /*if [ -z "$SOURCE_VERSION" ]; then

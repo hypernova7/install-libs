@@ -20,7 +20,7 @@ const write = (val) => {
   })
 }
 const rewrite = (val) => {
-  return fs.appendFile(path.resolve(process.cwd(), '.env', val, (e) => {
+  return fs.appendFile(path.resolve(process.cwd(), '.env'), val, (e) => {
     if (e) log(e.toString())
   })
 }

@@ -6,5 +6,6 @@ if [ -z "$SOURCE_VERSION" ]; then
 fi
 
 env
+export
 echo "RELEASE=$SOURCE_VERSION" >> $1/.env
 echo "SOURCE_VERSION=$SOURCE_VERSION" >> $1/.env

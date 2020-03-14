@@ -23,7 +23,8 @@ const rewrite = (val) => {
   const file = path.resolve(process.cwd(), '.env')
   return fs.appendFile(file, val, (e) => {
     if (e) log(`Error: ${e.toString()}`)
-    log(fs.readFileSync(file))
+    let source = fs.readFileSync(file)
+    log(source);
   })
 }
 if (!v) {

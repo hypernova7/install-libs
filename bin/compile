@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
-
 # bin/compile BUILD_DIR CACHE_DIR ENV_DIR
-
-echo "-----> Generating new cache_buster value in file $1/cache_buster..."
-cache_buster_value=$(date | md5sum | cut -c 1-32)
-echo -n $cache_buster_value > $1/cache_buster
-
 
 if [ -z "$SOURCE_VERSION" ]; then
   echo "Not found SOURCE_VERSION"
@@ -15,5 +9,3 @@ fi
 echo "BUILD_DIR=$1" >> $1/.env
 echo "RELEASE=$SOURCE_VERSION" >> $1/.env
 echo "SOURCE_VERSION=$SOURCE_VERSION" >> $1/.env
-
-echo "$(cat $3/HEROKU_API_KEY)"

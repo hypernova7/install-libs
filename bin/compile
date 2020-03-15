@@ -8,4 +8,3 @@ fi
 echo "BUILD_DIR=$1" >> $1/.env
 echo "RELEASE=$SOURCE_VERSION" >> $1/.env
 echo "SOURCE_VERSION=$SOURCE_VERSION" >> $1/.env
-echo HEROKU_RELEASE_VERSION

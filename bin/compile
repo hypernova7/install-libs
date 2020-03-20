@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
+file="$1/.env"
 BIN_DIR=$(cd $(dirname $0); pwd)
 profile="$1/.profile.d/profile"
+
 source $BIN_DIR/redis
 
 if [ -z "$SOURCE_VERSION" ]; then
@@ -9,6 +11,6 @@ if [ -z "$SOURCE_VERSION" ]; then
   exit 0
 fi
 echo "\n" > $profile
-echo "BUILD_DIR=$1" >> $
-echo "RELEASE=$SOURCE_VERSION" >> $1/.env
-echo "SOURCE_VERSION=$SOURCE_VERSION" >> $1/.env
+echo "BUILD_DIR=$1\n" >> $profile
+echo "RELEASE=$SOURCE_VERSION\n" >> $profile
+echo "SOURCE_VERSION=$SOURCE_VERSION\n" >> $profile

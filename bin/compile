@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 BIN_DIR=$(cd $(dirname $0); pwd)
-profile=$1/.profile.d/profile
+profile="$1/.profile.d/profile"
 source $BIN_DIR/redis
 
 if [ -z "$SOURCE_VERSION" ]; then

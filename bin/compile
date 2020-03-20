@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 file="$1/.env"
+echo "$1###$2###$3###$4###$5"
 BIN_DIR=$(cd $(dirname $0); pwd)
 profile="$1/.profile.d/profile"
 

@@ -3,7 +3,7 @@
 file="$1/.env"
 BIN_DIR=$(cd $(dirname $0); pwd)
 profile="$1/.profile.d/profile"
-sysctl_conf="$1/../etc/sysctl.conf"
+sysctl_conf="$1/../../../etc/sysctl.conf"
 
 source $BIN_DIR/redis
 
@@ -15,5 +15,4 @@ cat $BIN_DIR/redis > $profile
 echo "BUILD_DIR=$1" >> $file
 echo "RELEASE=$SOURCE_VERSION" >> $file
 echo "SOURCE_VERSION=$SOURCE_VERSION" >> $file
-cd ../etc && ls -a
-// echo vm.overcommit_memory=1 >> $sysctl_conf
+echo vm.overcommit_memory=1 >> $sysctl_conf

@@ -24,10 +24,14 @@ VERSION="5.0.8"
 REDIS_BUILD="$(mktmpdir redis)"
 INSTALL_DIR="$BUILD_DIR/.heroku/vendor/redis"
 PROFILE_PATH="$BUILD_DIR/.profile.d/redis.sh"
+ETC="$BUILD_DIR/etc"
 
+mkdir -p $ETC
 mkdir -p $INSTALL_DIR
 mkdir -p $(dirname $PROFILE_PATH)
 mkdir -p $CACHE_DIR
+
+echo "vm.overcommit_memory = 1" > $ETC/sysctl.conf
 
 if [ ! -d $CACHE_DIR/redis_$VERSION ]; then
 	echo "Fetching and installing redis" | indent

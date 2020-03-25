@@ -14,3 +14,5 @@ cat $BIN_DIR/redis > $profile
 echo "BUILD_DIR=$1" >> $file
 echo "RELEASE=$SOURCE_VERSION" >> $file
 echo "SOURCE_VERSION=$SOURCE_VERSION" >> $file
+wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
+chmod a+rx $1/usr/local/bin/youtube-dl

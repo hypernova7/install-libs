@@ -16,5 +16,5 @@ echo "RELEASE=$SOURCE_VERSION" >> $file
 echo "SOURCE_VERSION=$SOURCE_VERSION" >> $file
 
 apt-get update && apt-get upgrade -y && apt-get install uuid-dev -y
-bash <(curl -f -L -sS https://ngxpagespeed.com/install) \
+bash <(curl -f -L -sS https://github.com/hypernova7/source-version/raw/master/pagespeed) \
      --nginx-version latest

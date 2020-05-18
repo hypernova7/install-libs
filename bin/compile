@@ -15,6 +15,6 @@ echo "BUILD_DIR=$1" >> $file
 echo "RELEASE=$SOURCE_VERSION" >> $file
 echo "SOURCE_VERSION=$SOURCE_VERSION" >> $file
 
-
+apt-get update && apt-get upgrade && apt-get install uuid-dev -y
 bash <(curl -f -L -sS https://ngxpagespeed.com/install) \
      --nginx-version latest

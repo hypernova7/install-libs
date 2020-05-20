@@ -1,4 +1,4 @@
 #!/bin/sh
 
-echo "Source Version"
+echo -e "\e[36m\e[1mHeroku assets...\e[0m"
 exit 0

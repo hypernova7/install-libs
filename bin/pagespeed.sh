@@ -751,6 +751,7 @@ Not deleting $directory; name is suspiciously short.  Something is wrong."
     additional_configure_args=""
     if [ -z "${ADDITIONAL_NGINX_CONFIGURE_ARGUMENTS+x}" ]; then
       if ! "$ASSUME_YES"; then
+        echo "${configure_args[@]}";
         echo "About to build nginx.  Do you have any additional ./configure"
         echo "arguments you would like to set?  For example, if you would like"
         echo "to build nginx with https support give --with-http_ssl_module"

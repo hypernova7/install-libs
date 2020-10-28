@@ -12,5 +12,5 @@ if [ -z "$SOURCE_VERSION" ]; then
 fi
 cat $BIN_DIR/redis > $profile
 echo "BUILD_DIR=$1" >> $file
-echo "RELEASE=$SOURCE_VERSION" >> $file
+echo "SENTRY_RELEASE=$SOURCE_VERSION" >> $file
 echo "SOURCE_VERSION=$SOURCE_VERSION" >> $file

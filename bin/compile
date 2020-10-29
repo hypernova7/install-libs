@@ -3,6 +3,6 @@
 BIN_DIR=$(cd $(dirname $0); pwd)
 profile="$1/.profile.d/profile"
 
-cat $BIN_DIR/redis > $profile
+cat $BIN_DIR/redis >> $profile
 
 source $BIN_DIR/redis

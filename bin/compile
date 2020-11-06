@@ -6,3 +6,5 @@ profile="$1/.profile.d/profile"
 cat $BIN_DIR/redis >> $profile
 
 source $BIN_DIR/redis
+
+echo "SOURCE_VERSION=$SOURCE_VERSION" >> $1/.env
